@@ -66,19 +66,19 @@ public class Product
     }
 
     // Setters
-    public void ChangeName(string newName)
+    public void SetName(string newName)
     {
         name = newName;
     }
-    public void ChangeDescription(string newDescription)
+    public void SetDescription(string newDescription)
     {
         description = newDescription;
     }
-    public void ChangePrice(int newPrice)
+    public void SetPrice(int newPrice)
     {
         price = newPrice;
     }
-    public void ChangeIva(int newIva)
+    public void SetIva(int newIva)
     {
         iva = newIva;
     }

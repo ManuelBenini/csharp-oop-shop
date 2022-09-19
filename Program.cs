@@ -1,14 +1,13 @@
 ﻿
 Console.OutputEncoding = System.Text.Encoding.UTF8;
-System.Console.Out.WriteLine("œil");
 
 
 Product firstBook = new Product();
 
-firstBook.ChangeName("Do Androids Dream About Electric Sheeps?");
-firstBook.ChangeDescription("Il libro che ha ispirato Blade Runner!");
-firstBook.ChangePrice(50);
-firstBook.ChangeIva(22);
+firstBook.SetName("Do Androids Dream About Electric Sheeps?");
+firstBook.SetDescription("Il libro che ha ispirato Blade Runner!");
+firstBook.SetPrice(50);
+firstBook.SetIva(22);
 
 
 Console.WriteLine("Nome del primo libro: " + firstBook.GetName());
