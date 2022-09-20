@@ -4,83 +4,45 @@ public class Product
 {
 
     // Attributes
-    int code;
-    string name;
-    string description;
-    int price;
-    int iva;
+    public int Code { get; }
+    public string Name { get; set; }
+    public string Description { get; set; }
+    public int Price { get; set; }
+    public int Iva { get; set; }
 
     // costruttore
     public Product()
     {
-       code = GenerateCode();
+        Code = GenerateCode();
     }
 
     // costruttore con parametri
     public Product(string name, string description, int price, int iva)
     {
-        code = GenerateCode();
-        this.name = name;
-        this.description = description;
-        this.price = price;
-        this.iva = iva;
+        Code = GenerateCode();
+        Name = name;
+        Description = description;
+        Price = price;
+        Iva = iva;
     }
 
-    // Getters
-    public int GetCode()
-    {
-        return code;
-    }
-    public string GetName()
-    {
-       return name;
-    }
-    public string GetDescription()
-    {
-        return description;
-    }
-    public int GetPrice()
-    {
-        return price;
-    }
-    public int GetIva()
-    {
-        return iva;
-    }
+    // Getters & Setters
     public float GetTaxedPrice()
     {
-        float taxedPrice = ((float)price / 100) * iva;
+        float taxedPrice = ((float)Price / 100) * Iva;
         return taxedPrice;
     }
 
     public string GetFullName()
     {
-        string fullname = GetName() + code;
+        string fullname = Name + Code;
         return fullname;
     }
 
     public string GetFullCode()
     {
         char pad = '0';
-        return code.ToString().PadLeft(8, pad);
-    }
-
-    // Setters
-    public void SetName(string newName)
-    {
-        name = newName;
-    }
-    public void SetDescription(string newDescription)
-    {
-        description = newDescription;
-    }
-    public void SetPrice(int newPrice)
-    {
-        price = newPrice;
-    }
-    public void SetIva(int newIva)
-    {
-        iva = newIva;
+        return Code.ToString().PadLeft(8, pad);
     }
 
     // Methods
