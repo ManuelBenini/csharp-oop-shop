@@ -58,10 +58,11 @@
         Liters = 0;
     }
 
-    public override string PrintProduct()
+    public override void PrintProduct()
     {
-        string fullname = $"Nome: {Name}, Codice: {Code}, Fonte: {Source}, Acidità(Ph): {Ph}, Litri: {Liters}";
-        return fullname;
+        base.PrintProduct();
+        Console.Write($", Fonte: {Source}, Acidità(Ph): {Ph}, Litri: {Liters}");
+        Console.WriteLine();
     }
 
     public static double ConvertToGallons(double liters)

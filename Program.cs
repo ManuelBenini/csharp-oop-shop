@@ -7,7 +7,7 @@ Console.WriteLine(water.Name);
 Console.WriteLine(water.Description);
 Console.WriteLine(water.Price);
 Console.WriteLine(water.Iva);
-Console.WriteLine(water.PrintProduct());
+water.PrintProduct();
 
 water.LitersToEmpty();
 water.Fill(1.5);

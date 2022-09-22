@@ -27,10 +27,9 @@ public abstract class Product
         return taxedPrice;
     }
 
-    public virtual string PrintProduct()
+    public virtual void PrintProduct()
     {
-        string fullname = Name + Code;
-        return fullname;
+        Console.Write($"Nome: {Name}, Codice: {Code}");
     }
 
     public string GetFullCode()
@@ -50,4 +49,10 @@ interface ILiquids
 {
     public double LitersToDrink(double litersToDrink);
     public double Fill(double litersToAdd);
+}
+
+interface ISolidFood
+{
+    public double FoodToEat(double foodToEat);
+    public double Fill(double foodToAdd);
 }
