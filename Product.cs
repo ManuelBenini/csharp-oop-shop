@@ -53,6 +53,6 @@ interface ILiquids
 
 interface ISolidFood
 {
-    public double FoodToEat(double foodToEat);
-    public double Fill(double foodToAdd);
+    public int FoodToEat(int foodToEat);
+    public int Fill(int foodToAdd);
 }

@@ -1,19 +1,16 @@
 ﻿public class FruitBag : Product, ISolidFood
 {    
-    public double Fruits { get; set; }
-    public string FruitKg { get; set; }
-    public double MaxFruits { get; set; } = 5;
+    public int Fruits { get; set; }
+    public int MaxFruits { get; set; } = 5;
     public string Source { get; set; }
 
-    public FruitBag(double fruits, string fruitKg, double maxFruits, string source, string name, string description, int price, int iva) : base(name, description, price, iva)
+    public FruitBag(int fruits, string source, string name, string description, int price, int iva) : base(name, description, price, iva)
     {
         Fruits = fruits;
-        FruitKg = fruitKg;
-        MaxFruits = maxFruits;
         Source = source;
     }
 
-    public double FoodToEat(double foodToEat)
+    public int FoodToEat(int foodToEat)
     {
         if (Fruits >= foodToEat)
         {
@@ -27,11 +24,11 @@
         }
     }
 
-    public double Fill(double foodToAdd)
+    public int Fill(int foodToAdd)
     {
         if (Fruits < MaxFruits)
         {
-            Fruits += MaxFruits;
+            Fruits += foodToAdd;
 
             if (Fruits > MaxFruits)
             {
