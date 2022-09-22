@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-public class Product
+public abstract class Product
 {
 
     // Attributes
@@ -11,12 +11,6 @@ public class Product
     public int Iva { get; set; }
 
     // costruttore
-    public Product()
-    {
-        Code = GenerateCode();
-    }
-
-    // costruttore con parametri
     public Product(string name, string description, int price, int iva)
     {
         Code = GenerateCode();
@@ -26,14 +20,14 @@ public class Product
         Iva = iva;
     }
 
-    // Getters & Setters
+    // Methods
     public float GetTaxedPrice()
     {
         float taxedPrice = ((float)Price / 100) * Iva;
         return taxedPrice;
     }
 
-    public string GetFullName()
+    public virtual string PrintProduct()
     {
         string fullname = Name + Code;
         return fullname;
@@ -45,10 +39,15 @@ public class Product
         return Code.ToString().PadLeft(8, pad);
     }
 
-    // Methods
-    private int GenerateCode()
+    public static int GenerateCode()
     {
         return new Random().Next(1, 999999999);
     }
 
+}
+
+interface ILiquids
+{
+    public double LitersToDrink(double litersToDrink);
+    public double Fill(double litersToAdd);
 }
