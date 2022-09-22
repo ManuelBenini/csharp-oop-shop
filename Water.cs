@@ -15,7 +15,7 @@
 
     public double LitersToDrink(double litersToDrink)
     {
-        if(Liters > litersToDrink)
+        if(Liters >= litersToDrink)
         {
             Liters -= litersToDrink;
             return Liters;
